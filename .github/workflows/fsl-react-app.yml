@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [14.x]
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -20,17 +20,20 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: npm test
 
-    - name: verifying files and path
-      run: |
-        pwd
-        ls -ltrh
+    # - name: verifying files and path
+    #   run: |
+    #     pwd
+    #     ls -ltrh
 
-    - name: Build react app
-      run: |
-        npm install
-        npm run lint
-        npm run prettier
-        CI=true npm run test
-        npm run build
+    # - name: Build react app
+    #   run: |
+    #     npm install
+    #     npm run lint
+    #     npm run prettier
+    #     CI=true npm run test
+    #     npm run build
         
