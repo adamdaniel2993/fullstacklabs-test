@@ -17,8 +17,8 @@ jobs:
 
       - name: Installing node-js 14.x
         run: |
-          apt -y update
-          apt -y install nodejs
+          sudo apt -y update
+          sudo apt -y install nodejs
           node --version
 
     # - name: verifying files and path
