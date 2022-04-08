@@ -21,6 +21,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
+    - name: verifying files and path
+      run: |
+        pwd
+        ls -ltrh
 
     - name: Build react app
       run: |
