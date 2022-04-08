@@ -14,14 +14,14 @@ jobs:
       matrix:
         node-version: [14.x]
     steps:
-    - name: Check out the code
-    - uses: actions/checkout@v3
+      - name: Check out the code
+      - uses: actions/checkout@v3
 
-    - name: Installing node-js 14.x
-    - run: |
-        apt -y update
-        apt -y install nodejs
-        node --version
+      - name: Installing node-js 14.x
+      - run: |
+          apt -y update
+          apt -y install nodejs
+          node --version
 
     # - name: verifying files and path
     #   run: |
