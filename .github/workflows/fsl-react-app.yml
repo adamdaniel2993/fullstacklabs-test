@@ -10,13 +10,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Check out the code
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Installing node-js 14.x
-      - run: |
+        run: |
           apt -y update
           apt -y install nodejs
           node --version
