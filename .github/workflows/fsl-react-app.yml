@@ -21,16 +21,16 @@ jobs:
           sudo apt -y install nodejs
           node --version
 
-    # - name: verifying files and path
-    #   run: |
-    #     pwd
-    #     ls -ltrh
+      - name: verifying files and path
+        run: |
+          pwd
+          ls -ltrh
 
-    # - name: Build react app
-    #   run: |
-    #     npm install
-    #     npm run lint
-    #     npm run prettier
-    #     CI=true npm run test
-    #     npm run build
+      - name: Build react app
+        run: |
+          npm install
+          npm run lint
+          npm run prettier
+          CI=true npm run test
+          npm run build
         
